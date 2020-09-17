@@ -1,0 +1,261 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9825,        251]
+NotebookOptionsPosition[      8746,        225]
+NotebookOutlinePosition[      9242,        243]
+CellTagsIndexPosition[      9199,        240]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A mass on a spring with friction is described by  \
+\:21462x\:2146t2+\[Mu]\:2146x\:2146t+x=0.  \[Mu] is a friction coefficient \
+which can vary from 0 to 2The initial position is x[0]=1 and the initial \
+velocity x\[CloseCurlyQuote][0]=0. Start a new notebook and introduce the \
+topic  with a short description of what you are going to do in a text cell. \
+Then construct a Manipulate which will show a plot of the solution of the DE \
+, with values of \[Mu] determined by a slider control.  Make the plot from \
+t=0 to 20. After some experimentation, adjust PlotRange so that the plot \
+shows the behavior but does not autoscale. As you vary \[Mu] , you should \
+observe a transition from oscillatory behavior to exponential damped \
+behavior. \
+\>", "Text",
+ CellChangeTimes->{{3.809276727126934*^9, 3.8092767452699156`*^9}, 
+   3.8092775838737006`*^9, {3.809282482382963*^9, 
+   3.809282488958393*^9}},ExpressionUUID->"e21e1f57-f8dd-459a-a3f6-\
+ab9df8b645cc"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.809276776690182*^9, {3.809277657222245*^9, 3.8092776739918146`*^9}, {
+   3.80927787952875*^9, 3.8092778854537053`*^9}, {3.8092779608141584`*^9, 
+   3.8092780195090933`*^9}, {3.809278051949309*^9, 3.8092781079173183`*^9}, {
+   3.809280157234868*^9, 
+   3.8092801576259766`*^9}},ExpressionUUID->"ca6abe43-f575-4260-9f1b-\
+fe42615a99a5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"solution1", " ", "=", " ", 
+   RowBox[{"DSolveValue", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+         RowBox[{"u", "*", 
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+         RowBox[{"x", "[", "t", "]"}]}], "\[Equal]", "0"}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "==", "1"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+     RowBox[{"x", "[", "t", "]"}], ",", "t"}], " ", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.809278143132429*^9, 3.80927829545201*^9}, {
+   3.80927835339501*^9, 3.8092783778965163`*^9}, 3.8092784170230527`*^9, 
+   3.809278469652726*^9, {3.8092785267855215`*^9, 3.809278594146385*^9}, {
+   3.809278654566263*^9, 3.809278655425601*^9}, {3.8092788495244703`*^9, 
+   3.809278860420388*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"8333de21-156e-4d80-a069-48a51d3459fb"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       FractionBox["1", "2"], " ", "t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "u"}], "-", 
+         SqrtBox[
+          RowBox[{
+           RowBox[{"-", "4"}], "+", 
+           SuperscriptBox["u", "2"]}]]}], ")"}]}]]}], " ", "u"}], "+", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", "t", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "u"}], "+", 
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "4"}], "+", 
+          SuperscriptBox["u", "2"]}]]}], ")"}]}]], " ", "u"}], "+", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", "t", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "u"}], "-", 
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "4"}], "+", 
+          SuperscriptBox["u", "2"]}]]}], ")"}]}]], " ", 
+    SqrtBox[
+     RowBox[{
+      RowBox[{"-", "4"}], "+", 
+      SuperscriptBox["u", "2"]}]]}], "+", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", "t", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "u"}], "+", 
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "4"}], "+", 
+          SuperscriptBox["u", "2"]}]]}], ")"}]}]], " ", 
+    SqrtBox[
+     RowBox[{
+      RowBox[{"-", "4"}], "+", 
+      SuperscriptBox["u", "2"]}]]}]}], 
+  RowBox[{"2", " ", 
+   SqrtBox[
+    RowBox[{
+     RowBox[{"-", "4"}], "+", 
+     SuperscriptBox["u", "2"]}]]}]]], "Output",
+ CellChangeTimes->{
+  3.8092782960011587`*^9, {3.809278354923411*^9, 3.8092783669038763`*^9}, 
+   3.809278418458519*^9, 3.8092784731972704`*^9, {3.809278533532629*^9, 
+   3.8092785701437783`*^9}, 3.809278617094339*^9, 3.809278657087595*^9, 
+   3.8092788681802197`*^9, 3.809279436974237*^9, 3.8092796826703176`*^9, {
+   3.8092797146263695`*^9, 3.809279738143505*^9}, 3.8092798291530485`*^9, 
+   3.8092800047077007`*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"e6773331-f8a7-4acd-87e5-53812c791ae5"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.809276776690182*^9, {3.809277657222245*^9, 3.8092776669872065`*^9}, 
+   3.8092783163400717`*^9, 3.809278455455801*^9, 
+   3.809278621066716*^9},ExpressionUUID->"c1457a65-e7dd-4f01-add7-\
+aeee74a37623"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"solution1", " ", "/.", " ", 
+      RowBox[{"u", "\[Rule]", "u2"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "20"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"u2", ",", "0", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8092787185020895`*^9, 3.809278720401394*^9}, {
+   3.809278778934765*^9, 3.8092787826209855`*^9}, {3.8092789055963535`*^9, 
+   3.809278977372117*^9}, {3.8092792611891704`*^9, 3.809279340452175*^9}, {
+   3.8092794222684517`*^9, 3.809279431475602*^9}, {3.809279523803616*^9, 
+   3.8092795310996137`*^9}, {3.8092795642833858`*^9, 
+   3.8092796218585124`*^9}, {3.809279653868782*^9, 3.8092796679734063`*^9}, {
+   3.809279702372192*^9, 3.8092797349558*^9}, 3.809279817061313*^9, {
+   3.8092798472358274`*^9, 3.8092798820660763`*^9}, {3.8092799808427153`*^9, 
+   3.8092800204985743`*^9}, {3.8092801477878666`*^9, 3.8092801499235907`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"23c47e49-a510-4bc4-8ca7-3c7d67e27d54"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`u2$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`u2$$], 0, 2}}, Typeset`size$$ = {
+    360., {109., 114.71269103504042`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`u2$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        ReplaceAll[$CellContext`solution1, $CellContext`u -> \
+$CellContext`u2$$], {$CellContext`t, 0, 20}, PlotRange -> {-1, 1}], 
+      "Specifications" :> {{$CellContext`u2$$, 0, 2}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{635., {138., 144.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8092789782201195`*^9, {3.809279261718305*^9, 3.809279306743803*^9}, 
+   3.809279341772899*^9, 3.8092794393211126`*^9, {3.8092795708949203`*^9, 
+   3.809279622421517*^9}, {3.8092796600777407`*^9, 3.8092796835395517`*^9}, 
+   3.8092797390527353`*^9, 3.8092798303203125`*^9, 3.8092798833114667`*^9, {
+   3.809280007978094*^9, 3.8092800305904093`*^9}, 3.809280151282032*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"1120c221-a253-434b-a1b8-009c85d1e0a0"]
+}, Open  ]]
+},
+WindowSize->{960, 478},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a94f42a2-e160-40a9-a758-63073c3e848f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 973, 16, 122, "Text",ExpressionUUID->"e21e1f57-f8dd-459a-a3f6-ab9df8b645cc"],
+Cell[1534, 38, 404, 7, 48, "Input",ExpressionUUID->"ca6abe43-f575-4260-9f1b-fe42615a99a5"],
+Cell[CellGroupData[{
+Cell[1963, 49, 1086, 26, 48, "Input",ExpressionUUID->"8333de21-156e-4d80-a069-48a51d3459fb"],
+Cell[3052, 77, 2148, 68, 63, "Output",ExpressionUUID->"e6773331-f8a7-4acd-87e5-53812c791ae5"]
+}, Open  ]],
+Cell[5215, 148, 252, 5, 28, "Input",ExpressionUUID->"c1457a65-e7dd-4f01-add7-aeee74a37623"],
+Cell[CellGroupData[{
+Cell[5492, 157, 1208, 24, 28, "Input",ExpressionUUID->"23c47e49-a510-4bc4-8ca7-3c7d67e27d54"],
+Cell[6703, 183, 2027, 39, 301, "Output",ExpressionUUID->"1120c221-a253-434b-a1b8-009c85d1e0a0"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
